@@ -1,4 +1,3 @@
-//import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -134,14 +133,14 @@ class Products with ChangeNotifier {
     }
   }
 
-  Future<void> updateProduct(String id, Product? newProduct) async {
+  Future<void> updateProduct(String id, Product newProduct) async {
     final prodIndex = _items.indexWhere((prod) => prod.id == id);
     if (prodIndex >= 0) {
       final url =
           'https://shop-1d972-default-rtdb.asia-southeast1.firebasedatabase.app/products/$id.json?auth=$authToken';
       await http.patch(url,
           body: json.encode({
-            'title': newProduct!.title,
+            'title': newProduct.title,
             'description': newProduct.description,
             'imageUrl': newProduct.imageUrl,
             'price': newProduct.price,

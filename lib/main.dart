@@ -17,6 +17,7 @@ import 'package:real_shop/widgets/order_item.dart';
 import 'package:real_shop/widgets/user_product_item.dart';
 
 import 'providers/auth.dart';
+import 'screens/orders_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
